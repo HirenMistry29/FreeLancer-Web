@@ -6,7 +6,6 @@ import Home from './pages/home/home';
 import { UserAuthContextProvider } from './context/UserAuthContext';
 import ProtectedRoute from './pages/auth/protectedRoutes';
 import UserOption from './pages/userOption';
-// import "../src/index.css"
 
 function App():JSX.Element {
   return (
