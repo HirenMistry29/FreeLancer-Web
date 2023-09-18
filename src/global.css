@@ -5,5 +5,10 @@
 /* @import '~ionicons/dist/css/ionicons.min.css'; */
 
 body{
-  font-family: 'poppins';
+  /* font-family: 'poppins'; */
+  background: #2B2C2E;
+
+}
+.primary-color{
+  color: #356d65;
 }

@@ -17,7 +17,7 @@ const Login = () => {
         setError("")
         try {
             await signIn(email , password );
-            navigate("/")
+            navigate("/selectuser")
             console.log("successful login");
             
         } catch (err : any) {

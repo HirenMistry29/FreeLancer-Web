@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import LoginCard from '../../auth/login'
-import SignUpCard from "../../auth/signup";
-
 
 const Dashboard = () => {
 const [loginCard , setLoginCard] = useState(false); 
