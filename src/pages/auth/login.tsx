@@ -26,31 +26,31 @@ const Login = () => {
     }
     
 return (
-    <div className="tw-absolute tw-top-1/2 tw-right-1/2 tw-transform tw-translate-x-1/2 tw-translate-y-1/2 tw-shadow-md">
+    <div className="absolute top-1/2 right-1/2 transform translate-x-1/2 translate-y-1/2 shadow-md">
         <Card  style={ window.innerWidth<560 ? { width: "20rem"} : {width: "25rem"}}>
             <Card.Body>
                 <Card.Title>
-                    <div className="tw-text-lg tw-font-semibold tw-flex justify-content-center tw-mb-6">Login</div>
+                    <div className="text-lg font-semibold flex justify-content-center mb-6">Login</div>
                 </Card.Title>
                 {error && <Alert variant="danger">{error}</Alert>}
                 <Form onSubmit={handleSubmit}>
-                    <Form.Group className="tw-px-4" controlId="exampleForm.ControlInput1">  
-                        <Form.Label className="tw-text-sm">Email address</Form.Label>
+                    <Form.Group className="px-4" controlId="exampleForm.ControlInput1">  
+                        <Form.Label className="text-sm">Email address</Form.Label>
                         <Form.Control 
                             type="email" 
                             placeholder="name@example.com" 
                             onChange={(e) => setEmail(e.target.value)}/>
                      </Form.Group>
-                     <Form.Group className="mb-3 tw-px-4 tw-mt-3" controlId="exampleForm.ControlInput1">
-                        <Form.Label className="tw-text-sm">Password</Form.Label>
+                     <Form.Group className="mb-3 px-4 mt-3" controlId="exampleForm.ControlInput1">
+                        <Form.Label className="text-sm">Password</Form.Label>
                         <Form.Control 
                             type="password" 
                             placeholder="password" 
                             onChange={(e) => setPassword(e.target.value)}/>
                      </Form.Group>
-                     <div className="tw-grid tw-gap-6"><Button variant="primary" type="submit">Login</Button></div>
-                     <span className="tw-flex tw-mt-1 tw-justify-center tw-align-items-center">Don't have an account?
-                        <Link style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }} className="tw-align-items-center tw-ml-1" to="/register">SignUp</Link>
+                     <div className="grid gap-6"><Button variant="primary" type="submit">Login</Button></div>
+                     <span className="flex mt-1 justify-center align-items-center">Don't have an account?
+                        <Link style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }} className="align-items-center ml-1" to="/register">SignUp</Link>
                     </span>
                 </Form>
             </Card.Body> 

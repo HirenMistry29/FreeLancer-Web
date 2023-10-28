@@ -1,7 +1,7 @@
 import React from "react";
 import { Image }        from "react-bootstrap";
 import HomeImg          from "../../img/home-image.jpg"
-import Navbar           from "../components/navbar/index"
+import Navbar           from "../../modules/components/navbar/index"
 import HomeImgPhn       from "../../img/home-image-phn.jpg"
 // import Features         from "./features";
 
