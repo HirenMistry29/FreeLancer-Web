@@ -37,8 +37,10 @@ const UserOption = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div id="GetJob" onClick={()=>{setUserType("employee"); console.log(userType); navigate('/profile')}} className="cursor-pointer border-solid border-[#f1cbb5] bg-white relative flex flex-col items-center m-0 pt-[20%] py-[40%] px-[120px] border rounded-lg">
-                                <div className=" absolute bg-[#356d65] w-[100%] h-[75%] m-0  rounded-b-lg flex flex-col  items-center justify-start "  >
+                            
+                            <div id="GetJob" onClick={()=>{setUserType("employee"); console.log(userType); navigate('/profileform')}} className="cursor-pointer border-solid border-[#f1cbb5] bg-white relative flex flex-col items-center m-0 pt-[20%] py-[40%] px-[120px] border rounded-lg">
+                                
+                                    <div className=" absolute bg-[#356d65] w-[100%] h-[75%] m-0  rounded-b-lg flex flex-col  items-center justify-start "  >
                                     <div className="-translate-y-1/4  mb-[80px]" >
                                     <div className="ml-[12%]">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150" fill="none">
@@ -52,7 +54,8 @@ const UserOption = () => {
                                         Ready to jumpstart your freelance career? Browse and apply for exciting opportunities on our platform to get the job that matches your skills and passion
                                     </p>
                                     </div>
-                                </div>
+                                    
+                            </div>
                             </div>
                         </div>
                     </div>

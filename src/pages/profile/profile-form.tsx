@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Header from "../../modules/components/header/header";
 import { Image } from "react-bootstrap";
 import { useRef } from "react";
 import { profileInputFields as fields } from "../../modules/client/constants/profile-input";
 import { useUserAuth } from "../../context/UserAuthContext";
-// import { log } from "console";
+import { useNavigate } from "react-router-dom";
 
 const Categories: string[] = [ "Gujurat" , "Maharashtra" , "Tamil Nadu" , "UT"];
 const Genders: string[] = ["Male" , "Female"]
@@ -12,6 +11,7 @@ const Genders: string[] = ["Male" , "Female"]
 
 const ProfileForm = ():JSX.Element => {
     const { user } = useUserAuth();
+    const navigate = useNavigate();
     const inputRef = useRef<HTMLInputElement | null>(null);
     const[ profilePhoto , setProfilePhoto ] = useState();
     const[ formData , setFormData ]         = useState({
@@ -49,9 +49,7 @@ const ProfileForm = ():JSX.Element => {
 
      const handleFormSubmit = async (e : any) => {
         e.preventDefault();
-        console.log(formData);
-        // console.log(user);
-        
+    //    navigate("/jobs")
      }
 
      const onInputChange = (e : any ) => {
@@ -65,7 +63,6 @@ const ProfileForm = ():JSX.Element => {
 
     return(
         <>
-            <Header/>
             <div id="profilePhoto" className="relative flex w-[100%] h-[300px] flex-col">
                 <Image className="bg-gray-200 w-[100%] h-[80%]"/>
                 <div className="">
@@ -259,13 +256,13 @@ const ProfileForm = ():JSX.Element => {
                         </div>
                     </div> */}
                     <div className="col-12 flex justify-center">
-                        <button type="submit" className="btn bg-[#356D65] text-white hover:bg-[#378a5e] hover:text-[#d6d6d6] ">Submit</button>
+                        <button type="submit" className="btn bg-[#356D65] text-white hover:bg-[#378a5e] hover:text-[#d6d6d6] mt-4 "><a href="/jobs">Submit</a></button>
                     </div>
                 </form>
                 </div>
                 </div>
 
-                <div className="bg-white w-[30%] h-max mr-[1%] p-3 flex flex-col gap-3">
+                <div className="bg-white w-[30%] h-max mr-[1%] p-3 flex flex-col gap-3 shadow-lg mb-3">
                     <div className="bg-[#F7ECDF] p-2 rounded-md flex  flex-col">
                         <span className="text-[#bd7f5f] font-semibold text-lg flex justify-center">FIND UR DREAM JOB</span>
                         <p className="text-[#d49c7f] text-justify px-4 py-2 leading-tight">
