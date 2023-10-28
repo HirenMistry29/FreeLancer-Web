@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "../modules/components/header/header";
 import { Link } from "react-router-dom";
+import DreamJob from "../modules/components/fillers/dream-job";
+import JobDekhoNews from "../modules/components/fillers/jobdekho-news";
 
 interface LayoutProps {
     children:any ;
@@ -30,7 +32,11 @@ const Layout:React.FC<LayoutProps> = ({children }) => {
                         </div>
                         <div className="p-4 mt-10">{children}</div>
                     </div>
-                    <div id="skills" className="bg-white w-[22%] mt-16 fixed right-1.5 h-full shadow-md rounded-sm ">
+                    <div id="skills" className="bg-white w-[22%] mt-16 fixed right-1.5 h-full shadow-md rounded-sm  px-3 pt-1">
+                        <div className="flex flex-col gap-2">
+                            <JobDekhoNews/>
+                            <JobDekhoNews/>
+                        </div>
                     </div>
                 </div>
                 </div>
