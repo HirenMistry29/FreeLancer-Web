@@ -15,7 +15,7 @@ const Layout:React.FC<LayoutProps> = ({children }) => {
 
     return(
         <>
-            <div className={`${currentPath==="/jobs" || currentPath==="/posts" || currentPath==="/profile" ? " " : " hidden"}`}>
+            <div className={`${currentPath==="/jobs" || currentPath==="/posts" || currentPath==="/profile" || currentPath==="/resume-builder" ? " " : " hidden"}`}>
                 <Header/>
                 <div>
                 <div className="justify-between flex flex-row h-full gap-2 mt- ">
@@ -45,6 +45,9 @@ const Layout:React.FC<LayoutProps> = ({children }) => {
             {currentPath==="/" && <div>{children}</div>}
             {currentPath==="/selectuser" && <div>{children}</div>}
             {currentPath==="/profile" && <div>{children}</div>}
+            {currentPath==="/resume-builder" && <div>{children}</div>}
+
+
 
 
         </>
