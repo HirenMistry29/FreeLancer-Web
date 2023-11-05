@@ -3,7 +3,11 @@ import { Image } from "react-bootstrap";
 import { useRef } from "react";
 import { profileInputFields as fields } from "../../modules/client/constants/profile-input";
 import { useUserAuth } from "../../context/UserAuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
+import DreamJob from "../../modules/components/fillers/dream-job";
+import { fireStoreDB } from "../../firebase/fb-config";
+import { addDoc, collection } from "firebase/firestore";
+
 
 const Categories: string[] = [ "Gujurat" , "Maharashtra" , "Tamil Nadu" , "UT"];
 const Genders: string[] = ["Male" , "Female"]
@@ -11,6 +15,7 @@ const Genders: string[] = ["Male" , "Female"]
 
 const ProfileForm = ():JSX.Element => {
     const { user } = useUserAuth();
+    const value = collection(fireStoreDB,"Users-Employees");
     const navigate = useNavigate();
     const inputRef = useRef<HTMLInputElement | null>(null);
     const[ profilePhoto , setProfilePhoto ] = useState();
@@ -49,7 +54,17 @@ const ProfileForm = ():JSX.Element => {
 
      const handleFormSubmit = async (e : any) => {
         e.preventDefault();
-    //    navigate("/jobs")
+       navigate("/jobs")
+
+    const { firstName , lastName , email , phone , 
+            bio , jobProfile , gender , dob , 
+            add1 , add2 , city , state , zip , userUID , userEmail } = formData;
+
+            await addDoc(value,{firstName: firstName , lastName : lastName , email: email , phone_no : phone , name: firstName+lastName,
+                                bio: bio , jobProfile: jobProfile , gender: gender , DOB : dob ,
+                                address_1 : add1 , address_2 : add2 , city: city , state: state , zip:zip ,
+                                userUID : userUID , userEmail : userEmail });
+
      }
 
      const onInputChange = (e : any ) => {
@@ -256,22 +271,14 @@ const ProfileForm = ():JSX.Element => {
                         </div>
                     </div> */}
                     <div className="col-12 flex justify-center">
-                        <button type="submit" className="btn bg-[#356D65] text-white hover:bg-[#378a5e] hover:text-[#d6d6d6] mt-4 "><a href="/jobs">Submit</a></button>
+                        <button type="submit" className="btn bg-[#356D65] text-white hover:bg-[#378a5e] hover:text-[#d6d6d6] mt-4 ">Submit</button>
                     </div>
                 </form>
                 </div>
                 </div>
 
                 <div className="bg-white w-[30%] h-max mr-[1%] p-3 flex flex-col gap-3 shadow-lg mb-3">
-                    <div className="bg-[#F7ECDF] p-2 rounded-md flex  flex-col">
-                        <span className="text-[#bd7f5f] font-semibold text-lg flex justify-center">FIND UR DREAM JOB</span>
-                        <p className="text-[#d49c7f] text-justify px-4 py-2 leading-tight">
-                            Every task becomes a joyful endeavor, and challenges are viewed as opportunities 
-                            for growth rather than obstacles.It provides a platform for creativity to flourish and talents to be recognized, 
-                            fostering a deep sense of satisfaction and accomplishment. work is no longer mundane; it is a fulfilling, 
-                             exciting adventure that fuels one's ambitions and brings a sense of contentment, making each day a 
-                             step toward personal and professional fulfillment.</p>
-                    </div>
+                    <DreamJob/>
                     <div className="bg-[#C4EFEA] p-2 rounded-md flex  flex-col">
                         <span className="text-[#215a5e] font-semibold text-lg flex justify-center">FIND UR DREAM JOB</span>
                         <p className="text-[#4a898f] text-justify px-4 py-2 leading-tight">
