@@ -16,6 +16,7 @@ import CompanyForm from './pages/company-form/company-form';
 import RecruiterLayout from './layout/recruiter-layout';
 import PostJob from './pages/recruiter/post-job/post-jobs';
 import YourJobs from './pages/recruiter/your-job/your-jobs';
+import JobDetails from './pages/jobs/job-details';
 
 function App():JSX.Element {
   return (
@@ -39,10 +40,10 @@ function App():JSX.Element {
       </Layout>
       {(window.location.pathname==="/post-jobs" || window.location.pathname==="/your-jobs") && 
       <RecruiterLayout>
-          <Routes>
+          <Routes>  
             <Route path="/post-jobs" element={<PostJob/>}/>
             <Route path="/your-jobs" element={<YourJobs/>}/>
-            
+            <Route path="/jobs/:jobId" element={<JobDetails />} />
           </Routes>
         </RecruiterLayout>}
     </UserAuthContextProvider>

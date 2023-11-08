@@ -10,8 +10,8 @@ const Sidebar = () => {
                 <div className="text-white font-semibold text-xl flex flex-col gap-3 mt-[20%] ml-[20%]">
                     <span onClick={()=>nav("./post-jobs")} className="cursor-pointer hover:text-[21px] hover:text-gray-100">Post Jobs</span>
                     <span onClick={()=>nav("./your-jobs")} className="cursor-pointer hover:text-[21px] hover:text-gray-100">Your Jobs</span>
-                    <span className="cursor-pointer hover:text-[21px] hover:text-gray-100 ">Browse Jobs</span>
-                    <span className="cursor-pointer hover:text-[21px] hover:text-gray-100 ">Analytics</span>
+                    <span onClick={()=>nav("./jobs/:jobId")} className="cursor-pointer hover:text-[21px] hover:text-gray-100 ">Browse Jobs</span>
+                    <span className="cursor-pointer hover:text-[21px] hover:text-gray-100 "><a href="/jobs">Get A Job</a></span>
                 </div>
 
             </div>

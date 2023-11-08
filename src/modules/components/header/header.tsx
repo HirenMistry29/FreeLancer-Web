@@ -20,7 +20,7 @@ const Header = ():JSX.Element => {
                 <div className="flex flex-row gap-3 text-white">
                 <span className="cursor-pointer hover:text-gray-200 focus:text-gray-600"><a href="./jobs">Jobs</a></span>
                     <span className="cursor-pointer hover:text-gray-200 focus:text-gray-600"><a href="./resume-builder">Builder</a></span>
-                    <span className="cursor-pointer hover:text-gray-200 focus:text-gray-600">Parser</span>
+                    <span className="cursor-pointer hover:text-gray-200 focus:text-gray-600"><a href="./post-jobs">Post Job</a></span>
                     <span className="cursor-pointer hover:text-gray-200 focus:text-gray-600">Profile</span>
                 </div>
                 

@@ -71,15 +71,41 @@ const PostJob = () => {
         e.preventDefault();
        navigate("/your-jobs");
        console.log(formData);
+
+       const now = new Date();
+         const options: Intl.DateTimeFormatOptions = {
+            timeZone: "Asia/Kolkata",
+            hour12: false, 
+            hour: "2-digit",
+            minute: "2-digit",
+        };
+
+        const dateOptions: Intl.DateTimeFormatOptions = {
+            timeZone: "Asia/Kolkata",
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+          };
+
+      const time = new Intl.DateTimeFormat("en-IN", options).format(now);
+      const todaydate = new Intl.DateTimeFormat("en-IN", dateOptions).format(now);
        
 
     const { projectName, projectTitle , projectDescription , projectDeadline ,
         projectDomain , searchingFor , salary , jobType , employeeGender, userUID , userEmail } = formData;
 
-            await addDoc(value,{Project_Name : projectName , Project_Title : projectTitle , Project_description : projectDescription ,
-                                Salary : salary, Deadline : projectDeadline , Project_Domain : projectDomain , 
-                                Searching_For : searchingFor , Employee_Gender : employeeGender , Job_Type : jobType ,
-                                userUID : userUID , userEmail : userEmail });
+        try {
+            if (userUID) {
+                await addDoc(value,{Project_Name : projectName , Project_Title : projectTitle , Project_description : projectDescription ,
+                    Salary : salary, Deadline : projectDeadline , Project_Domain : projectDomain , 
+                    Searching_For : searchingFor , Employee_Gender : employeeGender , Job_Type : jobType ,
+                    userUID : userUID , userEmail : userEmail , time: time , date : todaydate });
+            }
+        } catch (error) {
+            console.log(error);
+            
+        }
+            
 
      }
 
