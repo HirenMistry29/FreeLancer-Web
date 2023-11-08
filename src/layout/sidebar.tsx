@@ -6,7 +6,7 @@ const Sidebar = () => {
     return(
         <>
         <div id="sidebar">
-            <div className="bg-[#32292F] w-[20%] h-screen fixed left-0 p-4">
+            <div className="bg-[#356D65] w-[20%] h-screen fixed left-0 p-4">
                 <div className="text-white font-semibold text-xl flex flex-col gap-3 mt-[20%] ml-[20%]">
                     <span onClick={()=>nav("./post-jobs")} className="cursor-pointer hover:text-[21px] hover:text-gray-100">Post Jobs</span>
                     <span onClick={()=>nav("./your-jobs")} className="cursor-pointer hover:text-[21px] hover:text-gray-100">Your Jobs</span>

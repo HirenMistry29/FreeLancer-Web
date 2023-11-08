@@ -6,6 +6,9 @@ const YourJobs = () => {
             <div className="text-2xl font-semibold text-black p-4">
                 Jobs
             </div>
+            <div>
+                
+            </div>
         </>
     )
 }
