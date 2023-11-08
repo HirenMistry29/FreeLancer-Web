@@ -20,7 +20,7 @@ const UserOption = () => {
                             Select The User
                         </div>
                         <div className=" absolute justify-center mt-[15%]  flex flex-row gap-10 " id="NewRootRoot">
-                            <div id="PostJob" onClick={()=>{setUserType("recruiter")}} className="cursor-pointer border-solid border-[#f1cbb5] bg-white relative flex flex-col items-center m-0 pt-[20%] py-[40%] px-[120px] border rounded-lg">
+                            <div id="PostJob" onClick={()=>{setUserType("recruiter"); console.log(userType); navigate('/post-jobs')}} className="cursor-pointer border-solid border-[#f1cbb5] bg-white relative flex flex-col items-center m-0 pt-[20%] py-[40%] px-[120px] border rounded-lg">
                                 <div className=" absolute bg-[#356d65] w-[100%] h-[75%] m-0  rounded-b-lg flex flex-col  items-center justify-start "  >
                                     <div className="-translate-y-1/4  mb-[80px]" >
                                     <div className="ml-[12%]">
