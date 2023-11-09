@@ -80,7 +80,7 @@ const JobDetails:React.FC = () => {
                     <div className="flex flex-col w-[75%]">
                         <div className="flex justify-between items-center">
                             <div className="text-2xl font-bold font-sans text-[#32292F]">{projectTitle}</div>
-                            <div className="text-3xl font-bold font-sans text-[#32292F] mr-[10%]">{salary}</div>
+                            <div className="text-3xl font-bold font-sans text-[#32292F] mr-[10%]">{salary}/-</div>
                         </div>
                         <div className="font-sans text-md mt-[4%]">{projectDescription}</div>
                         <div className="text-2xl font-sans font-semibold mt-[10%]">About the project</div>
@@ -100,14 +100,14 @@ const JobDetails:React.FC = () => {
                         </div>
                         
                     </div>
-                    <div className="bg-[#ebc99c] rounded-md p-[2%] w-[35%] mr-[2%] h-max">
+                    {/* <div className="bg-[#ebc99c] rounded-md p-[2%] w-[35%] mr-[2%] h-max">
                     <div className="flex flex-col gap-2 text-[#32292F]">
                         <div className=" flex justify-center">Resumes   
                         </div>
                         
                         
                     </div>
-                </div>
+                </div> */}
                 </div>
             </div>
         </>

@@ -34,6 +34,7 @@ function App():JSX.Element {
           <Route path="/jobs" element={<ProtectedRoute><Job/></ProtectedRoute>}/>
           <Route path="/posts" element={<ProtectedRoute><Posts/></ProtectedRoute>}/>
           <Route path="/profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}/>
+          <Route path="/jobs/:jobId" element={<JobDetails />} />
           {/* <Route path="/post-jobs" element={<PostJob/>}/> */}
 
         </Routes>

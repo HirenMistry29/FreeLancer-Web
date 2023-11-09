@@ -15,7 +15,7 @@ const Categories: string[] = [ "Gujurat" , "Maharashtra" , "Tamil Nadu" , "UT"];
 
 const CompanyForm = ():JSX.Element => {
     const { user } = useUserAuth();
-    const value = collection(fireStoreDB,"Users-Recruiter");
+    const value = collection(fireStoreDB,"Users");
     const navigate = useNavigate();
     const inputRef = useRef<HTMLInputElement | null>(null);
     const[ profilePhoto , setProfilePhoto ] = useState();

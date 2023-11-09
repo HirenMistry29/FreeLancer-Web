@@ -15,7 +15,7 @@ const Genders: string[] = ["Male" , "Female"]
 
 const ProfileForm = ():JSX.Element => {
     const { user } = useUserAuth();
-    const value = collection(fireStoreDB,"Users-Employees");
+    const value = collection(fireStoreDB,"Users");
     const navigate = useNavigate();
     const inputRef = useRef<HTMLInputElement | null>(null);
     const[ profilePhoto , setProfilePhoto ] = useState();
@@ -63,8 +63,7 @@ const ProfileForm = ():JSX.Element => {
             await addDoc(value,{firstName: firstName , lastName : lastName , email: email , phone_no : phone , name: firstName+lastName,
                                 bio: bio , jobProfile: jobProfile , gender: gender , DOB : dob ,
                                 address_1 : add1 , address_2 : add2 , city: city , state: state , zip:zip ,
-                                userUID : userUID , userEmail : userEmail });
-
+                                userUID : userUID , userEmail : userEmail , user : "Employee"});
      }
 
      const onInputChange = (e : any ) => {
