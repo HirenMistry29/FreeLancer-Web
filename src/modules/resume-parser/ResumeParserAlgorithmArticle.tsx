@@ -1,11 +1,11 @@
-import { isBold } from "lib/parse-resume-from-pdf/extract-resume-from-sections/lib/common-features";
+import { isBold } from "../../lib/parse-resume-from-pdf/extract-resume-from-sections/lib/common-features";
 import {
   Badge,
   Heading,
   Link,
   Paragraph,
   Table,
-} from "components/documentation";
+} from "../components/documentation";
 import type {
   Line,
   Lines,
@@ -13,8 +13,8 @@ import type {
   TextItem,
   TextItems,
   TextScores,
-} from "lib/parse-resume-from-pdf/types";
-import { extractProfile } from "lib/parse-resume-from-pdf/extract-resume-from-sections/extract-profile";
+} from "../../lib/parse-resume-from-pdf/types";
+import { extractProfile } from "../../lib/parse-resume-from-pdf/extract-resume-from-sections/extract-profile";
 
 export const ResumeParserAlgorithmArticle = ({
   textItems,
@@ -104,17 +104,17 @@ export const ResumeParserAlgorithmArticle = ({
   return (
     <article className="mt-10">
       <Heading className="text-primary !mt-0 border-t-2 pt-8">
-        Resume Parser Algorithm Deep Dive
+        Resume Parser
       </Heading>
-      <Paragraph smallMarginTop={true}>
+      {/* <Paragraph smallMarginTop={true}>
         For the technical curious, this section will dive into the OpenResume
         parser algorithm and walks through the 4 steps on how it works. (Note
         that the algorithm is designed to parse single column resume in English
         language)
-      </Paragraph>
+      </Paragraph> */}
       {/* Step 1. Read the text items from a PDF file */}
-      <Heading level={2}>Step 1. Read the text items from a PDF file</Heading>
-      <Paragraph smallMarginTop={true}>
+      <Heading level={2}>MetaData</Heading>
+      {/* <Paragraph smallMarginTop={true}>
         A PDF file is a standardized file format defined by the{" "}
         <Link href="https://www.iso.org/standard/51502.html">
           ISO 32000 specification
@@ -139,7 +139,7 @@ export const ResumeParserAlgorithmArticle = ({
         document, whether the font is bolded, or whether it starts a new line.
         (Note that x,y position is relative to the bottom left corner of the
         page, which is the origin 0,0)
-      </Paragraph>
+      </Paragraph> */}
       <div className="mt-4 max-h-72 overflow-y-scroll border scrollbar scrollbar-track-gray-100 scrollbar-thumb-gray-200 scrollbar-w-3">
         <Table
           table={step1TextItemsTable}
@@ -148,8 +148,8 @@ export const ResumeParserAlgorithmArticle = ({
         />
       </div>
       {/* Step 2. Group text items into lines */}
-      <Heading level={2}>Step 2. Group text items into lines</Heading>
-      <Paragraph smallMarginTop={true}>
+      <Heading level={2}>Line Content</Heading>
+      {/* <Paragraph smallMarginTop={true}>
         The extracted text items aren't ready to use yet and have 2 main issues:
       </Paragraph>
       <Paragraph>
@@ -210,13 +210,13 @@ export const ResumeParserAlgorithmArticle = ({
           &nbsp;{"|"}&nbsp;
         </span>
         )
-      </Paragraph>
+      </Paragraph> */}
       <div className="mt-4 max-h-96 overflow-y-scroll border scrollbar scrollbar-track-gray-100 scrollbar-thumb-gray-200 scrollbar-w-3">
         <Table table={step2LinesTable} className="!border-none" />
       </div>
       {/* Step 3. Group lines into sections */}
-      <Heading level={2}>Step 3. Group lines into sections</Heading>
-      <Paragraph smallMarginTop={true}>
+      <Heading level={2}>Sections</Heading>
+      {/* <Paragraph smallMarginTop={true}>
         At step 2, the resume parser starts building contexts and associations
         to text items by first grouping them into lines. Step 3 continues the
         process to build additional associations by grouping lines into
@@ -259,11 +259,11 @@ export const ResumeParserAlgorithmArticle = ({
           colors
         </span>
         .
-      </Paragraph>
+      </Paragraph> */}
       <Step3SectionsTable sections={sections} />
       {/* Step 4. Extract resume from sections */}
-      <Heading level={2}>Step 4. Extract resume from sections</Heading>
-      <Paragraph smallMarginTop={true}>
+      <Heading level={2}>Scores</Heading>
+      {/* <Paragraph smallMarginTop={true}>
         Step 4 is the last step of the resume parsing process and is also the
         core of the resume parser, where it extracts resume information from the
         sections.
@@ -284,9 +284,9 @@ export const ResumeParserAlgorithmArticle = ({
       <Paragraph>
         As a demonstration, the table below shows 3 resume attributes in the
         profile section of the resume PDF added.
-      </Paragraph>
+      </Paragraph> */}
       <Table table={step4ProfileFeatureScoresTable} className="mt-4" />
-      {(profileScores.name.find((item) => item.text === profile.name)?.score ||
+      {/* {(profileScores.name.find((item) => item.text === profile.name)?.score ||
         0) > 0 && (
         <Paragraph smallMarginTop={true}>
           In the resume PDF added, the resume attribute name is likely to be "
@@ -296,8 +296,8 @@ export const ResumeParserAlgorithmArticle = ({
           profile section. (Some text items' feature scores can be negative,
           indicating they are very unlikely to be the targeted attribute)
         </Paragraph>
-      )}
-      <Heading level={3}>Feature Sets</Heading>
+      )} */}
+      {/* <Heading level={3}>Feature Sets</Heading>
       <Paragraph smallMarginTop={true}>
         Having explained the feature scoring system, we can dive more into how
         feature sets are constructed for a resume attribute. It follows 2
@@ -351,7 +351,7 @@ export const ResumeParserAlgorithmArticle = ({
       <Paragraph>
         Written by <Link href="https://github.com/xitanggg">Xitang</Link> on
         June 2023
-      </Paragraph>
+      </Paragraph> */}
     </article>
   );
 };

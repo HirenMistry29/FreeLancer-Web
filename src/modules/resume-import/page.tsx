@@ -1,8 +1,8 @@
 "use client";
-import { getHasUsedAppBefore } from "lib/redux/local-storage";
-import { ResumeDropzone } from "components/ResumeDropzone";
+import { getHasUsedAppBefore } from "../../lib/redux/local-storage";
+import { ResumeDropzone } from "../components/ResumeDropzone";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function ImportResume() {
   const [hasUsedAppBefore, setHasUsedAppBefore] = useState(false);
@@ -81,12 +81,12 @@ const SectionWithHeadingAndCreateButton = ({
     <>
       <p className="font-semibold text-gray-900">{heading}</p>
       <div className="mt-5">
-        <Link
+        {/* <Link
           href="/resume-builder"
           className="outline-theme-blue rounded-full bg-sky-500 px-6 pb-2 pt-1.5 text-base font-semibold text-white"
         >
           {buttonText}
-        </Link>
+        </Link> */}
       </div>
     </>
   );

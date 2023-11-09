@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { LockClosedIcon } from "@heroicons/react/24/solid";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { parseResumeFromPdf } from "lib/parse-resume-from-pdf";
+import { parseResumeFromPdf } from "../../lib/parse-resume-from-pdf";
 import {
   getHasUsedAppBefore,
   saveStateToLocalStorage,
-} from "lib/redux/local-storage";
-import { type ShowForm, initialSettings } from "lib/redux/settingsSlice";
-import { useRouter } from "next/navigation";
+} from "../../lib/redux/local-storage";
+import { type ShowForm, initialSettings } from "../../lib/redux/settingsSlice";
+// import { useRouter } from "next/navigation";
 import addPdfSrc from "public/assets/add-pdf.svg";
-import Image from "next/image";
-import { cx } from "lib/cx";
-import { deepClone } from "lib/deep-clone";
+// import Image from "next/image";
+import { cx } from "../../lib/cx";
+import { deepClone } from "../../lib/deep-clone";
 
 const defaultFileState = {
   name: "",
@@ -31,7 +31,7 @@ export const ResumeDropzone = ({
   const [file, setFile] = useState(defaultFileState);
   const [isHoveredOnDropzone, setIsHoveredOnDropzone] = useState(false);
   const [hasNonPdfFile, setHasNonPdfFile] = useState(false);
-  const router = useRouter();
+  // const router = useRouter();
 
   const hasFile = Boolean(file.name);
 
@@ -91,7 +91,7 @@ export const ResumeDropzone = ({
     }
 
     saveStateToLocalStorage({ resume, settings });
-    router.push("/resume-builder");
+    // router.push("/resume-builder");
   };
 
   return (
@@ -115,7 +115,7 @@ export const ResumeDropzone = ({
           playgroundView ? "space-y-2" : "space-y-3"
         )}
       >
-        {!playgroundView && (
+        {/* {!playgroundView && (
           <Image
             src={addPdfSrc}
             className="mx-auto h-14 w-14"
@@ -123,7 +123,7 @@ export const ResumeDropzone = ({
             aria-hidden="true"
             priority
           />
-        )}
+        )} */}
         {!hasFile ? (
           <>
             <p

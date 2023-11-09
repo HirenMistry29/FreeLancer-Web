@@ -17,6 +17,7 @@ import RecruiterLayout from './layout/recruiter-layout';
 import PostJob from './pages/recruiter/post-job/post-jobs';
 import YourJobs from './pages/recruiter/your-job/your-jobs';
 import JobDetails from './pages/jobs/job-details';
+import ResumeParser from './modules/resume-parser/page';
 
 function App():JSX.Element {
   return (
@@ -39,12 +40,14 @@ function App():JSX.Element {
 
         </Routes>
       </Layout>
-      {(window.location.pathname==="/post-jobs" || window.location.pathname==="/your-jobs") && 
+      {(window.location.pathname==="/post-jobs" || window.location.pathname==="/your-jobs"|| window.location.pathname==="/resume-parser")   && 
       <RecruiterLayout>
           <Routes>  
             <Route path="/post-jobs" element={<PostJob/>}/>
             <Route path="/your-jobs" element={<YourJobs/>}/>
+            <Route path="/resume-parser" element={< ResumeParser/>} />
             <Route path="/jobs/:jobId" element={<JobDetails />} />
+            
           </Routes>
         </RecruiterLayout>}
     </UserAuthContextProvider>

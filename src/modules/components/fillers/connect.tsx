@@ -14,7 +14,7 @@ interface Users{
 const Connect = () => {
     const[users ,setUsers] = useState<Users[]>([]);
     const [searchQuery, setSearchQuery] = useState("");
-    const userRef = collection(fireStoreDB,"Users-Employees")
+    const userRef = collection(fireStoreDB,"Users")
 
     useEffect(()=>{
         const fetchUsers = async () => {

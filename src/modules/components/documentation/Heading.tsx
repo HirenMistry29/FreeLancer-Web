@@ -1,4 +1,4 @@
-import { cx } from "lib/cx";
+import { cx } from "../../../lib/cx";
 
 const HEADING_CLASSNAMES = {
   1: "text-2xl font-bold",

@@ -1,8 +1,8 @@
 import { Fragment } from "react";
-import type { Resume } from "lib/redux/types";
-import { initialEducation, initialWorkExperience } from "lib/redux/resumeSlice";
-import { deepClone } from "lib/deep-clone";
-import { cx } from "lib/cx";
+import type { Resume } from "../../lib/redux/types";
+import { initialEducation, initialWorkExperience } from "../../lib/redux/resumeSlice";
+import { deepClone } from "../../lib/deep-clone";
+import { cx } from "../../lib/cx";
 
 const TableRowHeader = ({ children }: { children: React.ReactNode }) => (
   <tr className="divide-x bg-gray-50">

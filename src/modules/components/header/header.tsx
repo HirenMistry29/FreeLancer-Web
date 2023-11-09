@@ -21,6 +21,7 @@ const Header = ():JSX.Element => {
                 <span className="cursor-pointer hover:text-gray-200 focus:text-gray-600"><a href="./jobs">Jobs</a></span>
                     <span className="cursor-pointer hover:text-gray-200 focus:text-gray-600"><a href="./resume-builder">Builder</a></span>
                     <span className="cursor-pointer hover:text-gray-200 focus:text-gray-600"><a href="./post-jobs">Post Job</a></span>
+                    <span className="cursor-pointer hover:text-gray-200 focus:text-gray-600"><a href="./resume-parser">Parser</a></span>
                     <span className="cursor-pointer hover:text-gray-200 focus:text-gray-600">Profile</span>
                 </div>
                 
